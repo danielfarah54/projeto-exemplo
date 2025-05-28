@@ -1,0 +1,13 @@
+# Variáveis de ambiente para o projeto
+# Banco de dados
+MYSQL_USER=<usuário>
+MYSQL_ROOT_USER=<usuário_root>
+MYSQL_ROOT_PASSWORD=<senha_root>
+MYSQL_PASSWORD=<senha>
+MYSQL_DATABASE=<nome_do_banco>
+MYSQL_HOST=<host_do_banco>
+MYSQL_PORT=<porta_do_banco>
+
+# Servidor
+APP_PORT=<porta_aplicacao>
+APP_URL=<url_aplicacao>

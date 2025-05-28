@@ -1,0 +1,34 @@
+// Configurações do SWC. Referência: https://swc.rs/docs/getting-started, https://json.schemastore.org/swcrc
+
+{
+	"$schema": "https://json.schemastore.org/swcrc",
+  "jsc": {
+    "parser": {
+      "syntax": "typescript", // sintaxe de entrada como TypeScript
+      "decorators": true, // suporte a decorators
+      "dynamicImport": true // suporte a importações dinâmicas
+    },
+    // Configurações de transpilação do SWC
+    "transform": {
+      "legacyDecorator": true, // suporte a decorators no formato legado
+      "decoratorMetadata": true // suporte a metadados de decorators
+    },
+    "baseUrl": "./", // caminho base para resolução de módulos
+    "paths": {
+      "@/*": ["src/*"] // Mapeia aliases de importação para a pasta src/
+    },
+    // Configurações para a minificação do SWC
+    "minify": {
+      "compress": true, //  compressão do código
+      "mangle": false //  ofuscação de nomes de variáveis (pode quebrar algumas libs caso ativado)
+    },
+    "target": "es2021", // versão do ECMAScript alvo (ES2021)
+    "loose": false, // Define se o código gerado deve ser mais legível
+    "keepClassNames": false // Define se os nomes das classes devem ser mantidos
+  },
+  "sourceMaps": true, // geração de sourcemaps
+  "module": {
+    "type": "commonjs" // tipo de módulo gerado como CommonJS
+  },
+  "minify": true // minificação do código
+}

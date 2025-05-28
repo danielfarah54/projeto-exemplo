@@ -1,0 +1,23 @@
+services:
+  db:
+    platform: linux/x86_64
+    container_name: mysql1
+    image: mysql:8.0.28
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    volumes:
+      - ./mysql/data:/var/lib/mysql # Mapeia o diretório de dados do banco de dados para persistência de dados
+    ports:
+      - ${MYSQL_PORT}:3306
+    networks:
+      - internal
+
+networks:
+  internal:
+    driver: bridge
+    attachable: true
+    name: my-internal-network

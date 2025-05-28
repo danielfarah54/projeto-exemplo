@@ -1,0 +1,8 @@
+node_modules
+src/database/migrations
+dist
+db
+mysql
+.scannerwork/
+sonarqube/
+/swagger
